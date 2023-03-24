@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-input-button-unit',
@@ -10,6 +10,20 @@ import { Component } from '@angular/core';
   `,
   styleUrls: ['./input-button-unit.component.scss']
 })
-export class InputButtonUnitComponent {
-  title = 'Hello World';
+export class InputButtonUnitComponent implements OnInit{
+  title: string;
+
+  constructor(){
+    this.title = 'I Love Angular'
+  }
+
+  changeTitle(newTitle: string){
+    this.title = newTitle;
+  }
+
+  ngOnInit(): void {
+    this.changeTitle('Changed title through method.');
+  }
+
+  
 }
